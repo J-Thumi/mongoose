@@ -1,0 +1,16 @@
+Mongoose Overview
+Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
+
+Key Features of Mongoose:
+Schema Definitions: Mongoose allows you to define schemas for your data models. Schemas are used to define the structure of the documents within a collection.
+Data Validation: Built-in validation rules ensure the integrity of your data before it is saved to the database.
+Middleware: Support for middleware functions that are executed before or after certain operations (e.g., save, remove).
+Query Building: Provides a fluent API to build and execute queries.
+Populate: Allows you to reference documents in other collections and automatically replace the specified paths in the document with documents from other collections.
+
+
+In Mongoose, a model represents a collection of documents in the database that you can interact with using a defined schema. A model is a class that constructs documents based on a schema and provides an interface to the database for CRUD operations.
+
+Defining a Model
+Create a Schema: Define the structure and data types for your documents.
+Create a Model: Use the schema to create a model.
