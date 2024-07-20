@@ -14,3 +14,9 @@ In Mongoose, a model represents a collection of documents in the database that y
 Defining a Model
 Create a Schema: Define the structure and data types for your documents.
 Create a Model: Use the schema to create a model.
+
+
+hashing algorithms bcrypt, md5, sha-1 
+bcrypt is the best 
+Bcrypt
+npm install Bcrypt
