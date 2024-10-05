@@ -20,3 +20,53 @@ hashing algorithms bcrypt, md5, sha-1
 bcrypt is the best 
 Bcrypt
 npm install Bcrypt
+
+
+JWT (JSON Web Token) is a compact, URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity protected with a Message Authentication Code (MAC) and/or encrypted.
+
+Structure of a JWT
+A JWT is composed of three parts separated by dots (.):
+
+Header
+Payload
+Signature
+1. Header
+The header typically consists of two parts: the type of token (JWT) and the signing algorithm being used, such as HMAC SHA256 or RSA.
+
+2. Payload
+The payload contains the claims. Claims are statements about an entity (typically, the user) and additional data. There are three types of claims: registered, public, and private claims.
+
+Registered claims: Predefined claims which are not mandatory but recommended, such as iss (issuer), exp (expiration time), sub (subject), aud (audience), etc.
+Public claims: Custom claims created to share information between parties.
+Private claims: Custom claims created to share information within parties that agree on using them.
+
+3. Signature
+To create the signature part, you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.
+JWT is a compact, URL-safe means of representing claims to be transferred between two parties.
+Structure: Header, Payload, Signature.
+Use in React:
+Backend: Create and sign JWT.
+Frontend: Store JWT in localStorage, include JWT in Authorization header for authenticated requests.
+
+In the context of JWT (JSON Web Token), claims are statements about an entity (typically the user) and additional data. Claims are encoded as a JSON object and used as the payload of a JWT. They provide information about the user and other metadata that can be used by the recipient to understand the token's context and usage.
+
+Types of Claims
+Registered Claims:
+
+These are predefined claims which are recommended but not mandatory. They provide a set of standard fields to avoid name collisions.
+Examples:
+iss (Issuer): Identifies the principal that issued the JWT.
+sub (Subject): Identifies the principal that is the subject of the JWT.
+aud (Audience): Identifies the recipients that the JWT is intended for.
+exp (Expiration Time): Identifies the expiration time on or after which the JWT must not be accepted for processing.
+nbf (Not Before): Identifies the time before which the JWT must not be accepted for processing.
+iat (Issued At): Identifies the time at which the JWT was issued.
+jti (JWT ID): Provides a unique identifier for the JWT.
+Public Claims:
+
+These can be defined at will by those using JWTs but should be collision-resistant. It is recommended to use a namespace to avoid collisions.
+Example: {"http://example.com/is_admin": true}
+Private Claims:
+
+These are custom claims created to share information between parties that agree on using them. They are not registered or public and are specific to the use case.
+Example: {"role": "admin"}
